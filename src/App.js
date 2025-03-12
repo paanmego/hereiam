@@ -24,7 +24,7 @@ const HereIAmApp = () => {
       {/* 헤더 */}
       <header className="bg-white shadow-sm py-4 px-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-xl font-bold text-indigo-600">Here I am</h1>
+          <h1 className="text-xl font-bold text-indigo-600">약속 상점</h1>
           {isLoggedIn && (
             <button 
               onClick={() => {
@@ -58,7 +58,7 @@ const HereIAmApp = () => {
 
       {/* 푸터 */}
       <footer className="bg-white py-4 px-6 text-center text-sm text-gray-500">
-        © 2025 Here I am. All rights reserved.
+        © 2025 약속상점. All rights reserved.
       </footer>
     </div>
   );
@@ -488,7 +488,7 @@ const AdsView = ({ changeView }) => {
               <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">150m</span>
             </div>
             <p className="text-sm text-gray-600 mb-4">
-              Here I am 앱 사용자 한정 첫 방문 시 웰컴 드링크 제공. 분위기 좋은 와인바입니다.
+              약속상점 앱 사용자 한정 첫 방문 시 웰컴 드링크 제공. 분위기 좋은 와인바입니다.
             </p>
             <div className="flex justify-between items-center">
               <span className="text-sm text-indigo-600 font-medium">+150 포인트</span>
