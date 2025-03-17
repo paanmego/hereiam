@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Calendar, Users, Car, UserPlus, Star, CreditCard, Settings, ChevronRight, LogIn, UserCircle, Map, Clock, DollarSign, BarChart, ArrowRight, Smartphone, Check, Mail, Lock, Eye, Facebook, Twitter, Instagram, GitHub, ArrowLeft, TrendingUp, TrendingDown, LineChart, Briefcase, GraduationCap, Home, Store, MoreHorizontal, MousePointer, ShoppingCart, Link } from 'lucide-react';
+import { MapPin, Calendar, Users, Car, UserPlus, Star, CreditCard, Settings, ChevronRight, LogIn, UserCircle, Map, Clock, DollarSign, BarChart, ArrowRight, Smartphone, Check, Mail, Lock, Eye, Facebook, Twitter, Instagram, GitHub, ArrowLeft, TrendingUp, TrendingDown, LineChart, Briefcase, GraduationCap, Home, Store, MoreHorizontal, MousePointer, ShoppingCart, Link, AlertTriangle, Wine } from 'lucide-react';
 import './index.css';
  
 // 앱 메인 컴포넌트
@@ -794,6 +794,9 @@ const AppointmentDetailView = ({ changeView, appointment }) => {
     if (!appointment) return "City Hall";
     return appointment.title === "주간 회식" ? "강남 파스타 레스토랑" : "홍대 카페";
   };
+  
+  // 지각자 벌칙 정보 (주간회식인 경우만)
+  const latePenalty = appointment && appointment.title === "주간 회식" ? "2차 쏘기" : "커피 돌리기";
 
   // 약속이 없는 경우 대시보드로 리다이렉트
   if (!appointment) {
@@ -827,10 +830,10 @@ const AppointmentDetailView = ({ changeView, appointment }) => {
 
       {/* 지도 영역 - 약속별로 다른 지도 표시 */}
       {appointment.title === "주간 회식" ? (
-        <div className="relative h-60 mb-4 rounded-lg overflow-hidden shadow-md">
+        <div className="relative h-64 mb-4 rounded-lg overflow-hidden shadow-lg">
           {/* 강남 지역 실제 지도 이미지 */}
           <div 
-            className="w-full h-full bg-cover bg-center"
+            className="w-full h-full bg-cover bg-center animate-pulse-slow"
             style={{
               backgroundImage: "url('https://i.ibb.co/7QMBr3D/gangnam-map.jpg')",
               backgroundSize: "cover",
@@ -842,7 +845,7 @@ const AppointmentDetailView = ({ changeView, appointment }) => {
             
             {/* 지도 컨트롤 UI */}
             <div className="absolute top-4 right-4 z-10">
-              <div className="bg-white rounded-full shadow-md p-2">
+              <div className="bg-white rounded-full shadow-md p-2 hover:bg-indigo-100 transition-colors duration-300">
                 <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -852,16 +855,16 @@ const AppointmentDetailView = ({ changeView, appointment }) => {
             
             {/* 줌 컨트롤 */}
             <div className="absolute top-4 left-4 z-10 bg-white rounded-lg shadow-md">
-              <button className="p-1 border-b border-gray-200 block w-8 h-8 flex items-center justify-center">
+              <button className="p-1 border-b border-gray-200 block w-8 h-8 flex items-center justify-center hover:bg-indigo-100 transition-colors duration-300">
                 <span className="text-lg">+</span>
               </button>
-              <button className="p-1 block w-8 h-8 flex items-center justify-center">
+              <button className="p-1 block w-8 h-8 flex items-center justify-center hover:bg-indigo-100 transition-colors duration-300">
                 <span className="text-lg">-</span>
               </button>
             </div>
             
             {/* 약속 위치 핀 */}
-            <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+            <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 animate-bounce-slow">
               <div className="w-12 h-12 flex flex-col items-center">
                 <div className="bg-red-500 w-6 h-10 rounded-b-full rounded-t-3xl flex items-center justify-center shadow-lg pulse-animation">
                   <div className="bg-white w-3 h-3 rounded-full mt-1"></div>
@@ -872,18 +875,18 @@ const AppointmentDetailView = ({ changeView, appointment }) => {
               </div>
             </div>
             
-            {/* 참석자 위치 핀들 */}
-            <div className="absolute top-1/4 left-1/4 z-10">
+            {/* 참석자 위치 핀들 - 움직이는 애니메이션 추가 */}
+            <div className="absolute top-1/4 left-1/4 z-10 animate-ping-slow">
               <div className="bg-blue-500 w-5 h-8 rounded-b-full rounded-t-3xl flex items-center justify-center shadow-md">
                 <div className="bg-white w-2 h-2 rounded-full mt-1"></div>
               </div>
             </div>
-            <div className="absolute bottom-1/3 left-1/3 z-10">
+            <div className="absolute bottom-1/3 left-1/3 z-10 animate-pulse">
               <div className="bg-green-500 w-5 h-8 rounded-b-full rounded-t-3xl flex items-center justify-center shadow-md">
                 <div className="bg-white w-2 h-2 rounded-full mt-1"></div>
               </div>
             </div>
-            <div className="absolute top-1/3 right-1/4 z-10">
+            <div className="absolute top-1/3 right-1/4 z-10 animate-ping-slow">
               <div className="bg-yellow-500 w-5 h-8 rounded-b-full rounded-t-3xl flex items-center justify-center shadow-md">
                 <div className="bg-white w-2 h-2 rounded-full mt-1"></div>
               </div>
@@ -891,14 +894,22 @@ const AppointmentDetailView = ({ changeView, appointment }) => {
             
             {/* 위치 이름 */}
             <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 z-10">
-              <div className="text-sm font-medium bg-white px-3 py-1.5 rounded-full shadow-lg flex items-center">
+              <div className="text-sm font-medium bg-white px-3 py-1.5 rounded-full shadow-lg flex items-center hover:scale-105 transition-transform duration-300">
                 <MapPin className="w-4 h-4 mr-1 text-red-500" />
                 <span>{getLocationName()}</span>
+              </div>
+            </div>
+            
+            {/* 현재 시간 라벨 추가 */}
+            <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-10">
+              <div className="text-xs font-medium bg-black bg-opacity-70 text-white px-3 py-1 rounded-full shadow">
+                실시간 위치 ({new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})})
               </div>
             </div>
           </div>
         </div>
       ) : (
+        // 다른 약속의 지도 스타일은 유지
         <div className="relative h-60 bg-gray-200 mb-4 rounded-lg overflow-hidden">
           {/* 지도 컨트롤 UI */}
           <div className="absolute top-4 left-2 flex space-x-1">
@@ -947,7 +958,31 @@ const AppointmentDetailView = ({ changeView, appointment }) => {
               {appointment.date}
             </span>
           </div>
-          <div className="flex items-center mt-1">
+          
+          {/* 지각자 벌칙 정보 추가 */}
+          <div className="mt-3 mb-2">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <AlertTriangle className="w-4 h-4 text-yellow-500 mr-1" />
+                <span className="text-xs font-bold text-gray-700">지각자 벌칙:</span>
+              </div>
+              
+              <div className="relative group">
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
+                  <span className="text-white text-xs font-bold">!</span>
+                </div>
+                <div className="transform transition-transform duration-300 hover:scale-105 group-hover:rotate-3">
+                  <div className="bg-gradient-to-r from-red-500 via-purple-500 to-pink-500 text-white text-xs font-bold py-1.5 px-3 rounded-full shadow-md flex items-center">
+                    <Wine className="w-4 h-4 mr-1 animate-bounce" />
+                    <span className="mr-1">{latePenalty}</span>
+                    <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-yellow-400 opacity-75"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="flex items-center mt-2">
             <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">
               Owner: {appointment.owner}
             </span>
@@ -982,6 +1017,31 @@ const AppointmentDetailView = ({ changeView, appointment }) => {
           </div>
         </div>
       </div>
+      
+      {/* CSS 클래스 추가 */}
+      <style jsx>{`
+        @keyframes bounce-slow {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-8px); }
+        }
+        @keyframes ping-slow {
+          0% { transform: scale(1); opacity: 1; }
+          75%, 100% { transform: scale(1.1); opacity: 0.8; }
+        }
+        @keyframes pulse-slow {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.7; }
+        }
+        .animate-bounce-slow {
+          animation: bounce-slow 3s infinite;
+        }
+        .animate-ping-slow {
+          animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+        .animate-pulse-slow {
+          animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+      `}</style>
 
       {/* 참석자 정시 도착 확률 제목 */}
       <h2 className="text-lg font-bold mb-6">참석자의 정시 도착 확률</h2>
