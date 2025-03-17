@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Calendar, Users, Car, UserPlus, Star, CreditCard, Settings, ChevronRight, LogIn, UserCircle, Map, Clock, DollarSign, BarChart, ArrowRight, Smartphone, Check, Mail, Lock, Eye, Facebook, Twitter, Instagram, GitHub } from 'lucide-react';
+import { MapPin, Calendar, Users, Car, UserPlus, Star, CreditCard, Settings, ChevronRight, LogIn, UserCircle, Map, Clock, DollarSign, BarChart, ArrowRight, Smartphone, Check, Mail, Lock, Eye, Facebook, Twitter, Instagram, GitHub, ArrowLeft, TrendingUp, TrendingDown, LineChart } from 'lucide-react';
 import './index.css';
  
 // 앱 메인 컴포넌트
@@ -190,7 +190,7 @@ const LandingView = ({ changeView, setUserType }) => {
                 언제 어디서나 쉽고 빠르게 약속을 만들고 관리할 수 있습니다. 더 많은 혜택을 모바일에서 만나보세요.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#" className="flex items-center bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition duration-300">
+                <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" className="flex items-center bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition duration-300">
                   <svg className="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17.5,7.5a4.94,4.94,0,0,0-2.16.49A5.23,5.23,0,0,0,12,5.5,5.37,5.37,0,0,0,6.5,10.5v5a5.37,5.37,0,0,0,5.5,5,5.23,5.23,0,0,0,3.34-2.49A4.94,4.94,0,0,0,17.5,18.5a5,5,0,0,0,0-10Z" />
                     <path d="M13,11.5v-1H8v4.95h5V14.5H9v-1h3v-1H9v-1Z" fill="#fff" />
@@ -200,7 +200,7 @@ const LandingView = ({ changeView, setUserType }) => {
                     <div className="text-xl font-medium -mt-1">App Store</div>
                   </div>
                 </a>
-                <a href="#" className="flex items-center bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition duration-300">
+                <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" className="flex items-center bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition duration-300">
                   <svg className="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M3.609 1.814L13.792 12 3.609 22.186c-.181.181-.29.435-.29.71 0 .54.435.976.976.976.275 0 .54-.109.71-.29L15.186 12 5.004 1.814c-.181-.181-.435-.29-.71-.29-.54 0-.976.435-.976.976 0 .275.109.529.29.71z" />
                   </svg>
@@ -399,33 +399,33 @@ const LandingView = ({ changeView, setUserType }) => {
               <h3 className="text-xl font-bold text-white mb-6">약속 상점</h3>
               <p className="mb-6">시간을 지키고 혜택을 받는 스마트한 약속 플랫폼</p>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition duration-300">
+                <button className="text-gray-400 hover:text-white transition duration-300 bg-transparent border-0 p-0">
                   <Facebook className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition duration-300">
+                </button>
+                <button className="text-gray-400 hover:text-white transition duration-300 bg-transparent border-0 p-0">
                   <Twitter className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition duration-300">
+                </button>
+                <button className="text-gray-400 hover:text-white transition duration-300 bg-transparent border-0 p-0">
                   <Instagram className="w-5 h-5" />
-                </a>
+                </button>
               </div>
             </div>
             <div>
               <h4 className="text-white font-medium mb-4">서비스</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white transition duration-300">약속 만들기</a></li>
-                <li><a href="#" className="hover:text-white transition duration-300">주변 제안</a></li>
-                <li><a href="#" className="hover:text-white transition duration-300">포인트 적립</a></li>
-                <li><a href="#" className="hover:text-white transition duration-300">비즈니스 솔루션</a></li>
+                <li><button className="text-gray-400 hover:text-white transition duration-300 bg-transparent border-0 p-0 cursor-pointer">약속 만들기</button></li>
+                <li><button className="text-gray-400 hover:text-white transition duration-300 bg-transparent border-0 p-0 cursor-pointer">주변 제안</button></li>
+                <li><button className="text-gray-400 hover:text-white transition duration-300 bg-transparent border-0 p-0 cursor-pointer">포인트 적립</button></li>
+                <li><button className="text-gray-400 hover:text-white transition duration-300 bg-transparent border-0 p-0 cursor-pointer">비즈니스 솔루션</button></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-medium mb-4">고객지원</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white transition duration-300">자주 묻는 질문</a></li>
-                <li><a href="#" className="hover:text-white transition duration-300">사용 가이드</a></li>
-                <li><a href="#" className="hover:text-white transition duration-300">문의하기</a></li>
-                <li><a href="#" className="hover:text-white transition duration-300">개인정보 처리방침</a></li>
+                <li><button className="text-gray-400 hover:text-white transition duration-300 bg-transparent border-0 p-0 cursor-pointer">자주 묻는 질문</button></li>
+                <li><button className="text-gray-400 hover:text-white transition duration-300 bg-transparent border-0 p-0 cursor-pointer">사용 가이드</button></li>
+                <li><button className="text-gray-400 hover:text-white transition duration-300 bg-transparent border-0 p-0 cursor-pointer">문의하기</button></li>
+                <li><button className="text-gray-400 hover:text-white transition duration-300 bg-transparent border-0 p-0 cursor-pointer">개인정보 처리방침</button></li>
               </ul>
             </div>
             <div>
@@ -1303,7 +1303,7 @@ const AdsView = ({ changeView }) => {
   return (
     <div className="max-w-md mx-auto">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl font-semibold">추천 광고</h2>
+        <h2 className="text-xl font-semibold">추천 캠페인</h2>
         <button onClick={() => changeView('dashboard')} className="text-sm text-gray-600">
           돌아가기
         </button>
@@ -1704,8 +1704,8 @@ const BusinessApp = ({ currentView, changeView }) => {
   const views = {
     businessProfile: <BusinessProfileView onComplete={() => changeView('businessDashboard')} />,
     businessDashboard: <BusinessDashboardView changeView={changeView} />,
-    createAd: <CreateAdView onComplete={() => changeView('businessDashboard')} />,
-    adPerformance: <AdPerformanceView changeView={changeView} />,
+    createCampaign: <CreateCampaignView onComplete={() => changeView('businessDashboard')} />,
+    campaignPerformance: <CampaignPerformanceView changeView={changeView} />,
     paymentManagement: <PaymentManagementView changeView={changeView} />,
   };
 
@@ -1773,126 +1773,145 @@ const BusinessProfileView = ({ onComplete }) => {
 };
 
 // 사업자 대시보드 컴포넌트
-const BusinessDashboardView = ({ changeView }) => {
+const BusinessDashboardView = () => {
+  // 네비게이션 상태 관리
+  const [activeView, setActiveView] = useState('dashboard');
+  const views = {
+    dashboard: <BusinessDashboard />,
+    createCampaign: <CreateCampaignView onComplete={() => setActiveView('dashboard')} />,
+    campaignPerformance: <CampaignPerformanceView onBack={() => setActiveView('dashboard')} />,
+    payments: <PaymentManagementView onBack={() => setActiveView('dashboard')} />
+  };
+
   return (
-    <div className="max-w-md mx-auto">
-      <h2 className="text-xl font-semibold mb-6">사업자 대시보드</h2>
-      
-      <div className="bg-white rounded-lg shadow-md p-4 mb-6">
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center">
-            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-              <LogIn className="text-blue-600 w-8 h-8" />
-            </div>
-            <div className="ml-4">
-              <h3 className="font-medium">강남 파스타 레스토랑</h3>
-              <p className="text-sm text-gray-600">음식점 · 서울 강남구</p>
-            </div>
-          </div>
-          <button onClick={() => changeView('businessProfile')} className="text-sm text-blue-600">
-            수정
-          </button>
+    <div className="min-h-screen bg-gray-100">
+      <header className="bg-white shadow">
+        <div className="max-w-7xl mx-auto py-4 px-4">
+          <h1 className="text-2xl font-bold text-gray-900">사업자 대시보드</h1>
         </div>
-        <div className="flex justify-between items-center mt-4 bg-blue-50 p-3 rounded">
-          <span className="text-sm">광고 예산 잔액</span>
-          <span className="font-bold text-blue-600" onClick={() => changeView('paymentManagement')}>
-            ₩ 250,000
-          </span>
+      </header>
+      
+      <main className="max-w-7xl mx-auto py-6 px-4">
+        {views[activeView]}
+      </main>
+    </div>
+  );
+};
+
+// 사업자 대시보드 메인 컴포넌트
+const BusinessDashboard = () => {
+  return (
+    <div className="space-y-6">
+      <div className="bg-white overflow-hidden shadow rounded-lg">
+        <div className="px-4 py-5 sm:p-6">
+          <div className="flex items-center justify-between">
+            <h3 className="text-lg leading-6 font-medium text-gray-900">캠페인 예산 잔액</h3>
+            <span className="text-2xl font-bold">250,000 포인트</span>
+          </div>
         </div>
       </div>
       
-      <div className="bg-white rounded-lg shadow-md mb-6">
-        <div className="p-4 border-b">
-          <h3 className="font-medium">현재 진행 중인 광고</h3>
-        </div>
-        
-        <div className="p-4">
-          <div className="flex justify-between items-center mb-4">
-            <h4 className="text-sm font-medium text-gray-700">활성 캠페인</h4>
-            <button 
-              className="flex items-center text-sm text-blue-600"
-              onClick={() => changeView('createAd')}
-            >
-              <span>광고 추가</span>
-              <ChevronRight className="w-4 h-4 ml-1" />
-            </button>
-          </div>
+      <div className="bg-white overflow-hidden shadow rounded-lg">
+        <div className="px-4 py-5 sm:p-6">
+          <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">현재 진행 중인 캠페인</h3>
           
           <div className="space-y-4">
-            <div className="border rounded-lg p-3">
-              <div className="flex justify-between mb-2">
-                <div className="flex items-center">
-                  <h5 className="font-medium">봄 신메뉴 프로모션</h5>
-                  <span className="ml-2 text-xs text-blue-600">(노출 소모 금액: 5 point)</span>
+            <div className="border rounded-lg p-4">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h4 className="text-md font-semibold">봄 신메뉴 프로모션 (노출 소모 금액: 5 point)</h4>
+                  <p className="text-sm text-gray-600 mt-1">2023-05-01 ~ 2023-05-31</p>
+                  <p className="text-sm text-gray-600">예산: 150,000 포인트</p>
+                  <p className="text-sm text-gray-600">제안 소모 금액: 1000 point</p>
                 </div>
-                <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">활성</span>
-              </div>
-              <div className="text-sm text-gray-600 space-y-1">
-                <p>4인 이상 방문 시 디저트 무료 제공!</p>
-                <p className="text-red-500 font-medium">제안 소모 금액: 1000 point</p>
-                <div className="flex justify-between mt-2 text-xs">
-                  <span>2025.03.01 ~ 2025.03.31(17:00 ~ 19:00)</span>
-                  <button 
-                    className="text-blue-600" 
-                    onClick={() => changeView('adPerformance')}
-                  >
-                    성과 확인
-                  </button>
+                <div>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                    진행 중
+                  </span>
+                  <div className="flex mt-2 space-x-2">
+                    <button className="text-xs text-blue-600 hover:text-blue-800">성과 보기</button>
+                    <button className="text-xs text-gray-600 hover:text-gray-800">중지</button>
+                  </div>
                 </div>
               </div>
             </div>
             
-            <div className="border rounded-lg p-3">
-              <div className="flex justify-between mb-2">
-                <div className="flex items-center">
-                  <h5 className="font-medium">점심 특가 프로모션</h5>
-                  <span className="ml-2 text-xs text-blue-600">(노출 소모 금액: 5 point)</span>
+            <div className="border rounded-lg p-4">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h4 className="text-md font-semibold">점심 특가 프로모션 (노출 소모 금액: 5 point)</h4>
+                  <p className="text-sm text-gray-600 mt-1">2023-05-10 ~ 2023-06-10</p>
+                  <p className="text-sm text-gray-600">예산: 100,000 포인트</p>
+                  <p className="text-sm text-gray-600">제안 소모 금액: 1000 point</p>
                 </div>
-                <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">활성</span>
-              </div>
-              <div className="text-sm text-gray-600 space-y-1">
-                <p>평일 점심 파스타 세트 15% 할인!</p>
-                <p className="text-red-500 font-medium">제안 소모 금액: 1000 point</p>
-                <div className="flex justify-between mt-2 text-xs">
-                  <span>2025.03.01 ~ 2025.03.31(11:00 ~ 14:00)</span>
-                  <button 
-                    className="text-blue-600" 
-                    onClick={() => changeView('adPerformance')}
-                  >
-                    성과 확인
-                  </button>
+                <div>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                    진행 중
+                  </span>
+                  <div className="flex mt-2 space-x-2">
+                    <button className="text-xs text-blue-600 hover:text-blue-800">성과 보기</button>
+                    <button className="text-xs text-gray-600 hover:text-gray-800">중지</button>
+                  </div>
                 </div>
               </div>
+            </div>
+            
+            <div className="text-center pt-4">
+              <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                캠페인 추가
+              </button>
             </div>
           </div>
         </div>
       </div>
       
-      <div className="grid grid-cols-2 gap-4">
-        <div 
-          className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center justify-center cursor-pointer"
-          onClick={() => changeView('adPerformance')}
-        >
-          <BarChart className="text-blue-500 w-8 h-8 mb-2" />
-          <h3 className="font-medium">광고 성과</h3>
-          <p className="text-xs text-gray-600 text-center mt-1">광고 분석 확인</p>
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className="bg-white overflow-hidden shadow rounded-lg">
+          <div className="px-4 py-5 sm:p-6">
+            <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">캠페인 성과</h3>
+            <div className="mt-1 flex justify-between items-center">
+              <div className="text-4xl font-bold">3,542</div>
+              <span className="text-sm text-gray-500">총 노출 수 (7일)</span>
+            </div>
+            <div className="mt-4 flex justify-between items-center">
+              <div className="text-3xl font-bold">521</div>
+              <span className="text-sm text-gray-500">총 방문 수 (7일)</span>
+            </div>
+            <div className="mt-4 flex justify-between items-center">
+              <div className="text-3xl font-bold">14.7%</div>
+              <span className="text-sm text-gray-500">방문율</span>
+            </div>
+            <div className="mt-4 text-center">
+              <button className="text-sm text-blue-600 hover:text-blue-800">자세히 보기</button>
+            </div>
+          </div>
         </div>
         
-        <div 
-          className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center justify-center cursor-pointer"
-          onClick={() => changeView('paymentManagement')}
-        >
-          <DollarSign className="text-green-500 w-8 h-8 mb-2" />
-          <h3 className="font-medium">결제 관리</h3>
-          <p className="text-xs text-gray-600 text-center mt-1">광고비 충전/정산</p>
+        <div className="bg-white overflow-hidden shadow rounded-lg">
+          <div className="px-4 py-5 sm:p-6">
+            <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">캠페인비 충전/정산</h3>
+            <div className="mt-1 grid grid-cols-2 gap-4">
+              <div className="p-4 border rounded-lg text-center">
+                <span className="block text-xl font-semibold">충전</span>
+                <span className="text-sm text-gray-500">예산 추가</span>
+              </div>
+              <div className="p-4 border rounded-lg text-center">
+                <span className="block text-xl font-semibold">정산</span>
+                <span className="text-sm text-gray-500">지난달 정산내역</span>
+              </div>
+            </div>
+            <div className="mt-4 text-center">
+              <button className="text-sm text-blue-600 hover:text-blue-800">자세히 보기</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-// 광고 등록 컴포넌트
-const CreateAdView = ({ onComplete }) => {
+// 캠페인 등록 컴포넌트
+const CreateCampaignView = ({ onComplete }) => {
   // 관심사 선택을 위한 상태 추가
   const [selectedInterests, setSelectedInterests] = useState([]);
   
@@ -1909,21 +1928,21 @@ const CreateAdView = ({ onComplete }) => {
 
   return (
     <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold mb-6 text-center">광고 등록</h2>
+      <h2 className="text-xl font-semibold mb-6 text-center">캠페인 등록</h2>
       
       <div className="space-y-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">광고 제목</label>
-          <input type="text" className="w-full p-2 border rounded" placeholder="광고 제목을 입력하세요" />
+          <label className="block text-sm font-medium text-gray-700 mb-2">캠페인 제목</label>
+          <input type="text" className="w-full p-2 border rounded" placeholder="캠페인 제목을 입력하세요" />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">광고 내용</label>
-          <textarea className="w-full p-2 border rounded h-24" placeholder="광고 내용을 입력하세요"></textarea>
+          <label className="block text-sm font-medium text-gray-700 mb-2">캠페인 내용</label>
+          <textarea className="w-full p-2 border rounded h-24" placeholder="캠페인 내용을 입력하세요"></textarea>
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">광고 이미지 업로드</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">캠페인 이미지 업로드</label>
           <div className="border-2 border-dashed border-gray-300 p-4 text-center rounded">
             <p className="text-sm text-gray-500">클릭하여 이미지를 업로드하세요</p>
             <p className="text-xs text-gray-400 mt-1">JPG, PNG 형식 (5MB 이하)</p>
@@ -1931,7 +1950,7 @@ const CreateAdView = ({ onComplete }) => {
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">광고 대상</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">캠페인 대상</label>
           <div className="space-y-3">
             <div>
               <label className="text-xs text-gray-600 mb-1 block">연령대 (다중 선택)</label>
@@ -1988,7 +2007,7 @@ const CreateAdView = ({ onComplete }) => {
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">광고 반경 설정</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">캠페인 반경 설정</label>
           <select className="w-full p-2 border rounded">
             <option>선택하세요</option>
             <option>100m 이내</option>
@@ -2000,7 +2019,7 @@ const CreateAdView = ({ onComplete }) => {
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">광고 기간</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">캠페인 기간</label>
           <div className="flex space-x-2 mb-2">
             <input type="date" className="flex-1 p-2 border rounded" />
             <span className="flex items-center">~</span>
@@ -2017,7 +2036,7 @@ const CreateAdView = ({ onComplete }) => {
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">광고 예산</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">캠페인 예산</label>
           <div className="relative">
             <input type="number" className="w-full p-2 border rounded pl-8" placeholder="예산을 입력하세요" />
             <span className="absolute left-3 top-2.5 text-gray-600">₩</span>
@@ -2029,488 +2048,291 @@ const CreateAdView = ({ onComplete }) => {
           className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 mt-4"
           onClick={onComplete}
         >
-          광고 등록
+          캠페인 등록
         </button>
       </div>
     </div>
   );
 };
 
-// 광고 성과 컴포넌트
-const AdPerformanceView = ({ changeView }) => {
+// 광고 성과 보기 컴포넌트
+const CampaignPerformanceView = ({ onBack }) => {
   return (
-    <div className="max-w-md mx-auto">
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl font-semibold">광고 성과</h2>
-        <button onClick={() => changeView('businessDashboard')} className="text-sm text-gray-600">
-          돌아가기
+    <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
+      <div className="flex items-center mb-6">
+        <button onClick={onBack} className="mr-4">
+          <ArrowLeft className="w-5 h-5" />
         </button>
+        <h2 className="text-xl font-semibold">캠페인 성과 분석</h2>
       </div>
       
-      <div className="bg-white rounded-lg shadow-md p-4 mb-6">
-        <div className="flex justify-between items-center mb-2">
-          <h3 className="font-medium">봄 신메뉴 프로모션</h3>
-          <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">활성</span>
+      <div className="mb-8">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-lg font-medium">봄 신메뉴 프로모션</h3>
+          <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">진행 중</span>
         </div>
         
-        <div className="flex justify-between mb-4">
-          <div className="text-center">
-            <p className="text-xs text-gray-600">노출수</p>
-            <p className="text-xl font-bold text-blue-600">1,254</p>
-            <p className="text-xs text-gray-600 mt-1">노출소모금액</p>
-            <p className="text-sm font-bold text-indigo-600">10,000 point</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div>
+            <p className="text-sm text-gray-600 mb-1">집행 기간</p>
+            <p className="font-medium">2023-05-01 ~ 2023-05-31</p>
           </div>
-          <div className="text-center">
-            <p className="text-xs text-gray-600">클릭수</p>
-            <p className="text-xl font-bold text-blue-600">243</p>
-            <p className="text-xs text-gray-600 mt-1">방문소모금액</p>
-            <p className="text-sm font-bold text-indigo-600">243,000 point</p>
-          </div>
-          <div className="text-center">
-            <p className="text-xs text-gray-600">CTR</p>
-            <p className="text-xl font-bold text-blue-600">19.4%</p>
+          <div>
+            <p className="text-sm text-gray-600 mb-1">캠페인 예산</p>
+            <p className="font-medium">150,000 포인트</p>
           </div>
         </div>
         
-        <div className="text-xs text-gray-600">
-          <p>집행 기간: 2025.03.01 ~ 2025.03.31</p>
-          <p>집행 예산: ₩150,000 (잔액: ₩89,500)</p>
-          <p className="mt-1 text-sm font-medium text-red-600">총금액: 253,000 point</p>
+        <div className="border-t pt-4">
+          <p className="text-sm text-gray-600 mb-1">총금액: 253,000 point</p>
         </div>
       </div>
       
-      {/* 방문자 분포 섹션 */}
-      <div className="bg-white rounded-lg shadow-md p-4 mb-6">
-        <h3 className="text-lg font-semibold mb-4 text-center">방문자 분포</h3>
+      <div className="mb-8">
+        <h3 className="text-lg font-medium mb-4">성과 요약</h3>
         
-        {/* 연령대 분포 그래프 */}
-        <div className="mb-8">
-          <h4 className="text-md font-medium mb-3 text-gray-700">연령대 분포</h4>
-          <div className="h-48 relative bg-gradient-to-b from-indigo-50 to-white rounded-lg p-3">
-            <div className="flex justify-between h-full items-end">
-              {/* 20대 */}
-              <div className="flex flex-col items-center w-1/5">
-                <div className="bg-gradient-to-t from-purple-500 to-indigo-600 w-12 rounded-t-lg shadow-lg" style={{ height: '30%' }}>
-                  <div className="w-full h-2 bg-white bg-opacity-20 rounded-t-lg"></div>
-                </div>
-                <span className="text-xs mt-2 font-semibold text-gray-600">20대</span>
-                <span className="text-xs text-gray-500">15%</span>
-              </div>
-              
-              {/* 30대 */}
-              <div className="flex flex-col items-center w-1/5">
-                <div className="bg-gradient-to-t from-blue-500 to-indigo-500 w-12 rounded-t-lg shadow-lg" style={{ height: '75%' }}>
-                  <div className="w-full h-2 bg-white bg-opacity-20 rounded-t-lg"></div>
-                </div>
-                <span className="text-xs mt-2 font-semibold text-gray-600">30대</span>
-                <span className="text-xs text-gray-500">38%</span>
-              </div>
-              
-              {/* 40대 */}
-              <div className="flex flex-col items-center w-1/5">
-                <div className="bg-gradient-to-t from-teal-500 to-blue-500 w-12 rounded-t-lg shadow-lg" style={{ height: '60%' }}>
-                  <div className="w-full h-2 bg-white bg-opacity-20 rounded-t-lg"></div>
-                </div>
-                <span className="text-xs mt-2 font-semibold text-gray-600">40대</span>
-                <span className="text-xs text-gray-500">30%</span>
-              </div>
-              
-              {/* 50대 */}
-              <div className="flex flex-col items-center w-1/5">
-                <div className="bg-gradient-to-t from-green-500 to-teal-500 w-12 rounded-t-lg shadow-lg" style={{ height: '25%' }}>
-                  <div className="w-full h-2 bg-white bg-opacity-20 rounded-t-lg"></div>
-                </div>
-                <span className="text-xs mt-2 font-semibold text-gray-600">50대</span>
-                <span className="text-xs text-gray-500">12%</span>
-              </div>
-              
-              {/* 60대+ */}
-              <div className="flex flex-col items-center w-1/5">
-                <div className="bg-gradient-to-t from-yellow-500 to-green-400 w-12 rounded-t-lg shadow-lg" style={{ height: '10%' }}>
-                  <div className="w-full h-2 bg-white bg-opacity-20 rounded-t-lg"></div>
-                </div>
-                <span className="text-xs mt-2 font-semibold text-gray-600">60대+</span>
-                <span className="text-xs text-gray-500">5%</span>
-              </div>
-            </div>
-            
-            {/* Y축 눈금 */}
-            <div className="absolute left-0 top-0 h-full flex flex-col justify-between py-2">
-              <span className="text-xs text-gray-400">40%</span>
-              <span className="text-xs text-gray-400">30%</span>
-              <span className="text-xs text-gray-400">20%</span>
-              <span className="text-xs text-gray-400">10%</span>
-              <span className="text-xs text-gray-400">0%</span>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="bg-gray-50 p-4 rounded-lg">
+            <p className="text-sm text-gray-600">노출 수</p>
+            <p className="text-2xl font-bold mt-1">12,458</p>
+            <div className="flex items-center mt-1 text-green-600 text-sm">
+              <TrendingUp className="w-4 h-4 mr-1" />
+              <span>+15.2%</span>
             </div>
           </div>
-        </div>
-        
-        {/* 시간대별 클릭률 그래프 */}
-        <div>
-          <h4 className="text-md font-medium mb-3 text-gray-700">시간대별 클릭률</h4>
-          <div className="h-52 relative bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-3">
-            <div className="flex items-end h-full space-x-1 pl-4">
-              {/* 오전 6-9시 */}
-              <div className="h-full flex flex-col justify-end items-center flex-1">
-                <div className="w-full rounded-t-md bg-gradient-to-r from-indigo-400 to-blue-500 relative" style={{ height: '15%' }}>
-                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white text-xs px-2 py-0.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                    8%
-                  </div>
-                </div>
-                <span className="text-xs mt-2 text-gray-600 transform -rotate-45">오전6-9</span>
-              </div>
-              
-              {/* 오전 9-12시 */}
-              <div className="h-full flex flex-col justify-end items-center flex-1">
-                <div className="w-full rounded-t-md bg-gradient-to-r from-blue-500 to-green-400 relative" style={{ height: '35%' }}>
-                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-green-400 text-white text-xs px-2 py-0.5 rounded-full shadow-md">
-                    17%
-                  </div>
-                </div>
-                <span className="text-xs mt-2 text-gray-600 transform -rotate-45">오전9-12</span>
-              </div>
-              
-              {/* 오후 12-15시 */}
-              <div className="h-full flex flex-col justify-end items-center flex-1">
-                <div className="w-full rounded-t-md bg-gradient-to-r from-green-400 to-yellow-400 relative" style={{ height: '60%' }}>
-                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-white text-xs px-2 py-0.5 rounded-full shadow-md">
-                    29%
-                  </div>
-                </div>
-                <span className="text-xs mt-2 text-gray-600 transform -rotate-45">오후12-15</span>
-              </div>
-              
-              {/* 오후 15-18시 */}
-              <div className="h-full flex flex-col justify-end items-center flex-1">
-                <div className="w-full rounded-t-md bg-gradient-to-r from-yellow-400 to-orange-500 relative" style={{ height: '40%' }}>
-                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white text-xs px-2 py-0.5 rounded-full shadow-md">
-                    20%
-                  </div>
-                </div>
-                <span className="text-xs mt-2 text-gray-600 transform -rotate-45">오후15-18</span>
-              </div>
-              
-              {/* 오후 18-21시 */}
-              <div className="h-full flex flex-col justify-end items-center flex-1">
-                <div className="w-full rounded-t-md bg-gradient-to-r from-orange-500 to-red-500 relative" style={{ height: '55%' }}>
-                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full shadow-md">
-                    26%
-                  </div>
-                </div>
-                <span className="text-xs mt-2 text-gray-600 transform -rotate-45">오후18-21</span>
-              </div>
-              
-              {/* 오후 21-24시 */}
-              <div className="h-full flex flex-col justify-end items-center flex-1">
-                <div className="w-full rounded-t-md bg-gradient-to-r from-red-500 to-purple-500 relative" style={{ height: '20%' }}>
-                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-purple-500 text-white text-xs px-2 py-0.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                    10%
-                  </div>
-                </div>
-                <span className="text-xs mt-2 text-gray-600 transform -rotate-45">오후21-24</span>
-              </div>
+          
+          <div className="bg-gray-50 p-4 rounded-lg">
+            <p className="text-sm text-gray-600">클릭 수</p>
+            <p className="text-2xl font-bold mt-1">1,285</p>
+            <div className="flex items-center mt-1 text-green-600 text-sm">
+              <TrendingUp className="w-4 h-4 mr-1" />
+              <span>+7.8%</span>
             </div>
-            
-            {/* Y축 눈금 */}
-            <div className="absolute left-0 top-0 h-full flex flex-col justify-between py-2">
-              <span className="text-xs text-gray-400">30%</span>
-              <span className="text-xs text-gray-400">20%</span>
-              <span className="text-xs text-gray-400">10%</span>
-              <span className="text-xs text-gray-400">0%</span>
+          </div>
+          
+          <div className="bg-gray-50 p-4 rounded-lg">
+            <p className="text-sm text-gray-600">CTR</p>
+            <p className="text-2xl font-bold mt-1">10.3%</p>
+            <div className="flex items-center mt-1 text-red-600 text-sm">
+              <TrendingDown className="w-4 h-4 mr-1" />
+              <span>-2.1%</span>
+            </div>
+          </div>
+          
+          <div className="bg-gray-50 p-4 rounded-lg">
+            <p className="text-sm text-gray-600">방문 수</p>
+            <p className="text-2xl font-bold mt-1">421</p>
+            <div className="flex items-center mt-1 text-green-600 text-sm">
+              <TrendingUp className="w-4 h-4 mr-1" />
+              <span>+12.5%</span>
             </div>
           </div>
         </div>
       </div>
       
-      {/* 최대 기여 방문자 분석 섹션 */}
-      <div className="bg-white rounded-lg shadow-md p-4 mb-6">
-        <h3 className="text-lg font-semibold mb-4 text-center">최대 기여 방문자 분석</h3>
+      <div className="mb-8">
+        <h3 className="text-lg font-medium mb-4">일별 추이</h3>
         
-        {/* 성별 분석 */}
-        <div className="mb-8">
-          <h4 className="text-md font-medium mb-3 text-gray-700">성별 기여도</h4>
-          <div className="relative h-40 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-4">
-            {/* 파이 차트 스타일의 성별 분포 */}
-            <div className="flex items-center justify-center">
-              <div className="relative w-32 h-32">
-                {/* 여성 (65%) */}
-                <div 
-                  className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full shadow-lg"
-                  style={{ 
-                    clipPath: 'polygon(50% 50%, 50% 0%, 100% 0%, 100% 100%, 50% 100%, 50% 50%)',
-                    transform: 'rotate(45deg)'
-                  }}
-                ></div>
+        <div className="bg-gray-50 p-4 rounded-lg h-64 mb-2 flex items-center justify-center">
+          <BarChart className="w-8 h-8 text-gray-400" />
+          <span className="ml-2 text-gray-500">일별 성과 차트</span>
+        </div>
+        
+        <div className="flex justify-end">
+          <select className="border rounded px-2 py-1 text-sm">
+            <option>최근 7일</option>
+            <option>최근 14일</option>
+            <option>최근 30일</option>
+            <option>기간 설정</option>
+          </select>
+        </div>
+      </div>
+      
+      <div className="mb-8">
+        <h3 className="text-lg font-medium mb-4">방문자 분포</h3>
+        
+        <div className="space-y-6">
+          <div>
+            <h4 className="text-md font-medium mb-2">연령별 분포</h4>
+            <div className="bg-gray-50 p-4 rounded-lg h-48 flex items-center justify-center">
+              <div className="w-full">
+                <div className="flex justify-between mb-1">
+                  <span className="text-sm">20대</span>
+                  <span className="text-sm">45%</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-2.5">
+                  <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: '45%' }}></div>
+                </div>
                 
-                {/* 남성 (35%) */}
-                <div 
-                  className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full"
-                  style={{ 
-                    clipPath: 'polygon(50% 50%, 50% 0%, 0% 0%, 0% 100%, 50% 100%, 50% 50%)',
-                    transform: 'rotate(45deg)'
-                  }}
-                ></div>
+                <div className="flex justify-between mb-1 mt-3">
+                  <span className="text-sm">30대</span>
+                  <span className="text-sm">30%</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-2.5">
+                  <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: '30%' }}></div>
+                </div>
                 
-                {/* 중앙 원 */}
-                <div className="absolute inset-0 w-12 h-12 bg-white rounded-full m-auto flex items-center justify-center">
-                  <span className="text-xs font-bold">성별</span>
+                <div className="flex justify-between mb-1 mt-3">
+                  <span className="text-sm">40대</span>
+                  <span className="text-sm">15%</span>
                 </div>
-              </div>
-              
-              {/* 범례 */}
-              <div className="ml-8">
-                <div className="flex items-center mb-2">
-                  <div className="w-4 h-4 rounded-full bg-gradient-to-r from-pink-400 to-purple-500 mr-2"></div>
-                  <span className="text-sm">여성 (65%)</span>
+                <div className="w-full bg-gray-200 rounded-full h-2.5">
+                  <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: '15%' }}></div>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-400 to-indigo-500 mr-2"></div>
-                  <span className="text-sm">남성 (35%)</span>
+                
+                <div className="flex justify-between mb-1 mt-3">
+                  <span className="text-sm">기타</span>
+                  <span className="text-sm">10%</span>
                 </div>
-                <div className="mt-4 px-3 py-1.5 bg-gradient-to-r from-pink-100 to-purple-100 rounded-full text-xs font-medium shadow-sm">
-                  여성 방문자 기여도 1.8배 높음
+                <div className="w-full bg-gray-200 rounded-full h-2.5">
+                  <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: '10%' }}></div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        
-        {/* 직업별 분석 */}
-        <div className="mb-4">
-          <h4 className="text-md font-medium mb-3 text-gray-700">직업별 기여도</h4>
-          <div className="bg-gradient-to-b from-blue-50 to-indigo-50 rounded-lg p-4">
-            <div className="grid grid-cols-3 gap-3">
-              {/* 직장인 */}
-              <div className="bg-white rounded-lg shadow-md p-3 transform transition-transform hover:scale-105">
-                <div className="flex justify-between items-start">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-500 to-cyan-400 flex items-center justify-center mb-2 shadow-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <span className="text-sm font-bold text-blue-600">42%</span>
-                </div>
-                <h5 className="text-sm font-medium text-gray-700">직장인</h5>
-                <div className="w-full bg-gray-200 rounded-full h-1.5 mt-1">
-                  <div className="bg-gradient-to-r from-blue-500 to-cyan-400 h-1.5 rounded-full" style={{width: '42%'}}></div>
-                </div>
-              </div>
-              
-              {/* 학생 */}
-              <div className="bg-white rounded-lg shadow-md p-3 transform transition-transform hover:scale-105">
-                <div className="flex justify-between items-start">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-green-500 to-emerald-400 flex items-center justify-center mb-2 shadow-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                      <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                    </svg>
-                  </div>
-                  <span className="text-sm font-bold text-green-600">28%</span>
-                </div>
-                <h5 className="text-sm font-medium text-gray-700">학생</h5>
-                <div className="w-full bg-gray-200 rounded-full h-1.5 mt-1">
-                  <div className="bg-gradient-to-r from-green-500 to-emerald-400 h-1.5 rounded-full" style={{width: '28%'}}></div>
-                </div>
-              </div>
-              
-              {/* 자영업 */}
-              <div className="bg-white rounded-lg shadow-md p-3 transform transition-transform hover:scale-105">
-                <div className="flex justify-between items-start">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-500 to-amber-400 flex items-center justify-center mb-2 shadow-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                  </div>
-                  <span className="text-sm font-bold text-yellow-600">15%</span>
-                </div>
-                <h5 className="text-sm font-medium text-gray-700">자영업</h5>
-                <div className="w-full bg-gray-200 rounded-full h-1.5 mt-1">
-                  <div className="bg-gradient-to-r from-yellow-500 to-amber-400 h-1.5 rounded-full" style={{width: '15%'}}></div>
-                </div>
-              </div>
-              
-              {/* 주부 */}
-              <div className="bg-white rounded-lg shadow-md p-3 transform transition-transform hover:scale-105">
-                <div className="flex justify-between items-start">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-pink-500 to-rose-400 flex items-center justify-center mb-2 shadow-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                    </svg>
-                  </div>
-                  <span className="text-sm font-bold text-pink-600">10%</span>
-                </div>
-                <h5 className="text-sm font-medium text-gray-700">주부</h5>
-                <div className="w-full bg-gray-200 rounded-full h-1.5 mt-1">
-                  <div className="bg-gradient-to-r from-pink-500 to-rose-400 h-1.5 rounded-full" style={{width: '10%'}}></div>
-                </div>
-              </div>
-              
-              {/* 프리랜서 */}
-              <div className="bg-white rounded-lg shadow-md p-3 transform transition-transform hover:scale-105">
-                <div className="flex justify-between items-start">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-500 to-violet-400 flex items-center justify-center mb-2 shadow-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
-                    </svg>
-                  </div>
-                  <span className="text-sm font-bold text-purple-600">3%</span>
-                </div>
-                <h5 className="text-sm font-medium text-gray-700">프리랜서</h5>
-                <div className="w-full bg-gray-200 rounded-full h-1.5 mt-1">
-                  <div className="bg-gradient-to-r from-purple-500 to-violet-400 h-1.5 rounded-full" style={{width: '3%'}}></div>
-                </div>
-              </div>
-              
-              {/* 기타 */}
-              <div className="bg-white rounded-lg shadow-md p-3 transform transition-transform hover:scale-105">
-                <div className="flex justify-between items-start">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-gray-500 to-slate-400 flex items-center justify-center mb-2 shadow-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <span className="text-sm font-bold text-gray-600">2%</span>
-                </div>
-                <h5 className="text-sm font-medium text-gray-700">기타</h5>
-                <div className="w-full bg-gray-200 rounded-full h-1.5 mt-1">
-                  <div className="bg-gradient-to-r from-gray-500 to-slate-400 h-1.5 rounded-full" style={{width: '2%'}}></div>
-                </div>
-              </div>
-            </div>
-            
-            {/* 핵심 인사이트 */}
-            <div className="mt-6 bg-white rounded-lg p-3 shadow-md">
-              <h5 className="text-sm font-medium text-indigo-700 mb-2">핵심 인사이트</h5>
-              <ul className="text-xs text-gray-600 space-y-1">
-                <li className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-pink-500 mr-2"></div>
-                  <span>여성(65%) 방문자가 남성(35%)보다 1.8배 더 많습니다.</span>
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-blue-500 mr-2"></div>
-                  <span>직장인(42%)과 학생(28%)이 전체 방문자의 70%를 차지합니다.</span>
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-                  <span>여성 직장인과 여학생이 가장 높은 구매 전환율을 보입니다.</span>
-                </li>
-              </ul>
+          
+          <div>
+            <h4 className="text-md font-medium mb-2">시간대별 클릭률</h4>
+            <div className="bg-gray-50 p-4 rounded-lg h-48 flex items-center justify-center">
+              <LineChart className="w-8 h-8 text-gray-400" />
+              <span className="ml-2 text-gray-500">시간대별 클릭률 차트</span>
             </div>
           </div>
         </div>
       </div>
       
-      <div className="flex space-x-2">
-        <button 
-          className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 py-2"
-          onClick={() => changeView('createAd')}
-        >
-          광고 수정
-        </button>
+      <div>
+        <h3 className="text-lg font-medium mb-4">최대 기여 방문자 분석</h3>
         
-        <button 
-          className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-2"
-          onClick={() => changeView('createAd')}
-        >
-          새 광고 만들기
-        </button>
+        <div className="bg-blue-50 p-4 rounded-lg">
+          <div className="flex items-start">
+            <Users className="w-8 h-8 text-blue-500 mr-3 mt-1" />
+            <div>
+              <h4 className="font-medium mb-1">주요 방문 고객층</h4>
+              <p className="text-gray-700">
+                캠페인에 가장 많은 관심을 보인 고객층은 <span className="font-semibold">20-30대 여성</span>으로, 
+                주로 <span className="font-semibold">17시~19시 사이</span>에 방문하는 경향이 있습니다. 
+                특히 <span className="font-semibold">인스타그램 사용자</span>들의 참여도가 높았습니다.
+              </p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                <span className="bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full text-xs">20-30대</span>
+                <span className="bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full text-xs">여성</span>
+                <span className="bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full text-xs">17-19시</span>
+                <span className="bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full text-xs">인스타그램</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 // 결제 관리 컴포넌트
-const PaymentManagementView = ({ changeView }) => {
+const PaymentManagementView = ({ onBack }) => {
   return (
-    <div className="max-w-md mx-auto">
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl font-semibold">결제 관리</h2>
-        <button onClick={() => changeView('businessDashboard')} className="text-sm text-gray-600">
-          돌아가기
+    <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
+      <div className="flex items-center mb-6">
+        <button onClick={onBack} className="mr-4">
+          <ArrowLeft className="w-5 h-5" />
         </button>
+        <h2 className="text-xl font-semibold">캠페인비 관리</h2>
       </div>
       
-      <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-        <h3 className="text-sm text-gray-600 mb-1">현재 광고 예산 잔액</h3>
-        <div className="flex items-end">
-          <span className="text-3xl font-bold text-blue-600">250,000</span>
-          <span className="ml-1 text-lg text-blue-600">원</span>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div>
+          <h3 className="text-lg font-medium mb-4">캠페인 예산 잔액</h3>
+          <div className="bg-blue-50 p-4 rounded-lg mb-6">
+            <div className="flex justify-between items-center">
+              <span className="text-gray-600">현재 잔액</span>
+              <span className="text-2xl font-bold">250,000 포인트</span>
+            </div>
+          </div>
+          
+          <h3 className="text-lg font-medium mb-4">캠페인 예산 충전</h3>
+          <div className="space-y-4">
+            <div className="grid grid-cols-3 gap-3">
+              <button className="p-3 border rounded-lg hover:bg-gray-50">
+                <div className="text-lg font-bold">50,000</div>
+                <div className="text-xs text-gray-500">포인트</div>
+              </button>
+              <button className="p-3 border rounded-lg hover:bg-gray-50">
+                <div className="text-lg font-bold">100,000</div>
+                <div className="text-xs text-gray-500">포인트</div>
+              </button>
+              <button className="p-3 border rounded-lg hover:bg-gray-50">
+                <div className="text-lg font-bold">200,000</div>
+                <div className="text-xs text-gray-500">포인트</div>
+              </button>
+            </div>
+            
+            <div className="flex items-center space-x-3">
+              <div className="flex-grow">
+                <input type="number" placeholder="직접 입력" className="w-full p-3 border rounded" />
+              </div>
+              <span className="text-gray-500">포인트</span>
+            </div>
+            
+            <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded">
+              결제하기
+            </button>
+          </div>
         </div>
         
-        <div className="mt-6">
-          <h4 className="text-sm font-medium text-gray-700 mb-2">예산 충전</h4>
-          <div className="flex space-x-2 mb-4">
-            <button className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 text-sm">
-              + 50,000원
-            </button>
-            <button className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 text-sm">
-              + 100,000원
-            </button>
-            <button className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 text-sm">
-              + 200,000원
-            </button>
-          </div>
-          
-          <div className="relative mb-4">
-            <input type="number" className="w-full p-2 border rounded pl-8" placeholder="직접 입력" />
-            <span className="absolute left-3 top-2.5 text-gray-600">₩</span>
-          </div>
-          
-          <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2">
-            결제하기
-          </button>
-        </div>
-      </div>
-      
-      <div className="bg-white rounded-lg shadow-md overflow-hidden mb-6">
-        <div className="p-4 border-b">
-          <h3 className="font-medium">결제 내역</h3>
-        </div>
-        
-        <div className="divide-y">
-          <div className="p-4 flex justify-between items-center">
-            <div>
-              <h4 className="font-medium">광고 예산 충전</h4>
-              <p className="text-xs text-gray-600">2025.03.01</p>
+        <div>
+          <h3 className="text-lg font-medium mb-4">결제 내역</h3>
+          <div className="border rounded-lg overflow-hidden">
+            <div className="bg-gray-50 p-3 border-b">
+              <div className="grid grid-cols-3">
+                <div className="font-medium">내용</div>
+                <div className="font-medium">날짜</div>
+                <div className="font-medium text-right">금액</div>
+              </div>
             </div>
-            <span className="text-green-600 font-medium">+200,000원</span>
-          </div>
-          
-          <div className="p-4 flex justify-between items-center">
-            <div>
-              <h4 className="font-medium">봄 신메뉴 프로모션</h4>
-              <p className="text-xs text-gray-600">2025.03.01 ~ 현재</p>
+            
+            <div className="divide-y">
+              <div className="p-3">
+                <div className="grid grid-cols-3">
+                  <div>캠페인 예산 충전</div>
+                  <div className="text-gray-600">2023-05-15</div>
+                  <div className="text-right text-green-600">+100,000 포인트</div>
+                </div>
+              </div>
+              
+              <div className="p-3">
+                <div className="grid grid-cols-3">
+                  <div>캠페인 비용 차감</div>
+                  <div className="text-gray-600">2023-05-10</div>
+                  <div className="text-right text-red-600">-15,000 포인트</div>
+                </div>
+              </div>
+              
+              <div className="p-3">
+                <div className="grid grid-cols-3">
+                  <div>캠페인 예산 충전</div>
+                  <div className="text-gray-600">2023-05-01</div>
+                  <div className="text-right text-green-600">+200,000 포인트</div>
+                </div>
+              </div>
+              
+              <div className="p-3">
+                <div className="grid grid-cols-3">
+                  <div>캠페인 비용 차감</div>
+                  <div className="text-gray-600">2023-04-28</div>
+                  <div className="text-right text-red-600">-22,500 포인트</div>
+                </div>
+              </div>
+              
+              <div className="p-3">
+                <div className="grid grid-cols-3">
+                  <div>캠페인 비용 차감</div>
+                  <div className="text-gray-600">2023-04-22</div>
+                  <div className="text-right text-red-600">-18,350 포인트</div>
+                </div>
+              </div>
             </div>
-            <span className="text-red-600 font-medium">-60,500원</span>
-          </div>
-          
-          <div className="p-4 flex justify-between items-center">
-            <div>
-              <h4 className="font-medium">점심 특가 프로모션</h4>
-              <p className="text-xs text-gray-600">2025.03.01 ~ 현재</p>
-            </div>
-            <span className="text-red-600 font-medium">-39,500원</span>
-          </div>
-          
-          <div className="p-4 flex justify-between items-center">
-            <div>
-              <h4 className="font-medium">광고 예산 충전</h4>
-              <p className="text-xs text-gray-600">2025.02.15</p>
-            </div>
-            <span className="text-green-600 font-medium">+150,000원</span>
           </div>
         </div>
-      </div>
-      
-      <div className="bg-blue-50 p-4 rounded-lg">
-        <h3 className="text-sm font-medium text-blue-800 mb-2">광고비 정산 안내</h3>
-        <p className="text-xs text-blue-700 mb-2">
-          광고비는 실제 노출 및 '결제에 따라' 일별로 정산됩니다. 효과적인 광고 집행을 위해 충분한 예산을 유지해주세요.
-        </p>
-        <button className="w-full bg-white border border-blue-500 text-blue-500 hover:bg-blue-50 py-2 text-sm mt-2">
-          정산 내역 상세 보기
-        </button>
       </div>
     </div>
   );
