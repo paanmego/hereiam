@@ -1,7 +1,60 @@
 import React, { useState } from 'react';
 import { MapPin, Calendar, Users, Car, UserPlus, Star, CreditCard, Settings, ChevronRight, LogIn, UserCircle, Map, Clock, DollarSign, BarChart, ArrowRight, Smartphone, Check, Mail, Lock, Eye, Facebook, Twitter, Instagram, GitHub, ArrowLeft, TrendingUp, TrendingDown, LineChart, Briefcase, GraduationCap, Home, Store, MoreHorizontal, MousePointer, ShoppingCart, Link, AlertTriangle, Wine } from 'lucide-react';
 import './index.css';
- 
+
+// CSS 애니메이션을 위한 스타일 추가
+const styles = `
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.hover-scale {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.exposure-amount {
+  background: linear-gradient(90deg, #3B82F6 0%, #2563EB 100%);
+  color: white;
+  font-weight: bold;
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.5rem;
+  margin-left: 0.5rem;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+}
+
+.proposal-amount {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #8B5CF6 0%, #D946EF 100%);
+  color: white;
+  font-weight: bold;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  margin-left: 0.25rem;
+  box-shadow: 0 3px 5px rgba(139, 92, 246, 0.3);
+}
+`;
+
 // 앱 메인 컴포넌트
 const HereIAmApp = () => {
   const [userType, setUserType] = useState('user'); // 'user' 또는 'business'
@@ -1918,6 +1971,9 @@ const BusinessDashboardView = () => {
 const BusinessDashboard = ({ setActiveView }) => {
   return (
     <div className="space-y-6">
+      {/* 인라인 스타일 추가 */}
+      <style>{styles}</style>
+      
       <div className="bg-white overflow-hidden shadow rounded-lg">
         <div className="px-4 py-5 sm:p-6">
           <div className="flex items-center justify-between">
@@ -1932,13 +1988,22 @@ const BusinessDashboard = ({ setActiveView }) => {
           <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">현재 진행 중인 캠페인</h3>
           
           <div className="space-y-4">
-            <div className="border rounded-lg p-4">
+            <div className="border rounded-lg p-4 hover:shadow-md transition-shadow duration-300">
               <div className="flex justify-between items-start">
                 <div>
-                  <h4 className="text-md font-semibold">봄 신메뉴 프로모션 (노출 금액: 5 point)</h4>
+                  <div className="flex items-center flex-wrap">
+                    <h4 className="text-md font-semibold">봄 신메뉴 프로모션</h4>
+                    <span className="exposure-amount animate-pulse-subtle">노출 금액: 5 point</span>
+                  </div>
                   <p className="text-sm text-gray-600 mt-1">2023-05-01 ~ 2023-05-31</p>
                   <p className="text-sm text-gray-600">예산: 150,000 포인트</p>
-                  <p className="text-sm text-gray-600">제안 금액: 1000 point</p>
+                  <div className="flex items-center mt-2">
+                    <span className="text-sm font-medium text-gray-700">제안 금액:</span>
+                    <div className="proposal-amount hover-scale ml-2">
+                      <Star className="w-3 h-3 mr-1 text-yellow-200" />
+                      <span>1000 point</span>
+                    </div>
+                  </div>
                 </div>
                 <div>
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
@@ -1957,13 +2022,22 @@ const BusinessDashboard = ({ setActiveView }) => {
               </div>
             </div>
             
-            <div className="border rounded-lg p-4">
+            <div className="border rounded-lg p-4 hover:shadow-md transition-shadow duration-300">
               <div className="flex justify-between items-start">
                 <div>
-                  <h4 className="text-md font-semibold">점심 특가 프로모션 (노출 금액: 5 point)</h4>
+                  <div className="flex items-center flex-wrap">
+                    <h4 className="text-md font-semibold">점심 특가 프로모션</h4>
+                    <span className="exposure-amount animate-pulse-subtle">노출 금액: 5 point</span>
+                  </div>
                   <p className="text-sm text-gray-600 mt-1">2023-05-10 ~ 2023-06-10</p>
                   <p className="text-sm text-gray-600">예산: 100,000 포인트</p>
-                  <p className="text-sm text-gray-600">제안 금액: 1000 point</p>
+                  <div className="flex items-center mt-2">
+                    <span className="text-sm font-medium text-gray-700">제안 금액:</span>
+                    <div className="proposal-amount hover-scale ml-2">
+                      <Star className="w-3 h-3 mr-1 text-yellow-200" />
+                      <span>1000 point</span>
+                    </div>
+                  </div>
                 </div>
                 <div>
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
