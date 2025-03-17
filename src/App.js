@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { MapPin, Calendar, Users, Car, UserPlus, Star, CreditCard, Settings, ChevronRight, LogIn, UserCircle, Map, Clock, DollarSign, BarChart } from 'lucide-react';
+import { MapPin, Calendar, Users, Car, UserPlus, Star, CreditCard, Settings, ChevronRight, LogIn, UserCircle, Map, Clock, DollarSign, BarChart, ArrowRight, Smartphone, Check, Mail, Lock, Eye, Facebook, Twitter, Instagram, GitHub } from 'lucide-react';
 import './index.css';
  
 // 앱 메인 컴포넌트
 const HereIAmApp = () => {
   const [userType, setUserType] = useState('user'); // 'user' 또는 'business'
-  const [currentView, setCurrentView] = useState('login');
+  const [currentView, setCurrentView] = useState('landing'); // 초기 뷰를 'landing'으로 변경
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // 뷰 변경 핸들러
@@ -24,29 +24,53 @@ const HereIAmApp = () => {
       {/* 헤더 */}
       <header className="bg-white shadow-sm py-4 px-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-xl font-bold text-indigo-600">약속 상점</h1>
-          {isLoggedIn && (
+          <h1 
+            className="text-xl font-bold text-indigo-600 cursor-pointer" 
+            onClick={() => {
+              if (isLoggedIn) {
+                setCurrentView(userType === 'user' ? 'dashboard' : 'businessDashboard');
+              } else {
+                setCurrentView('landing');
+              }
+            }}
+          >
+            약속 상점
+          </h1>
+          {isLoggedIn ? (
             <button 
               onClick={() => {
                 setIsLoggedIn(false);
-                setCurrentView('login');
+                setCurrentView('landing');
               }}
               className="text-sm text-gray-600"
             >
               로그아웃
             </button>
+          ) : (
+            currentView !== 'login' && (
+              <button 
+                onClick={() => setCurrentView('login')}
+                className="text-sm text-indigo-600 font-medium"
+              >
+                로그인
+              </button>
+            )
           )}
         </div>
       </header>
 
       {/* 메인 콘텐츠 */}
-      <main className="flex-1 p-6">
+      <main className="flex-1">
         {!isLoggedIn ? (
-          <LoginView 
-            userType={userType} 
-            setUserType={setUserType} 
-            onLogin={handleLogin} 
-          />
+          currentView === 'landing' ? (
+            <LandingView changeView={changeView} setUserType={setUserType} />
+          ) : (
+            <LoginView 
+              userType={userType} 
+              setUserType={setUserType} 
+              onLogin={handleLogin} 
+            />
+          )
         ) : (
           userType === 'user' ? (
             <UserApp currentView={currentView} changeView={changeView} />
@@ -60,6 +84,373 @@ const HereIAmApp = () => {
       <footer className="bg-white py-4 px-6 text-center text-sm text-gray-500">
         © 2025 약속상점. All rights reserved.
       </footer>
+    </div>
+  );
+};
+
+// 랜딩 페이지 컴포넌트
+const LandingView = ({ changeView, setUserType }) => {
+  return (
+    <div className="bg-gradient-to-b from-indigo-50 to-white">
+      {/* 히어로 섹션 */}
+      <section className="relative pt-16 pb-20 px-6 sm:px-10 lg:px-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-6">
+                <span className="block text-indigo-600">약속 시간</span>
+                <span className="block">지키고 혜택 받는</span>
+                <span className="block">스마트한 방법</span>
+              </h1>
+              <p className="text-lg text-gray-600 mb-8">
+                약속 상점은 모임 장소 인근 상점들의 실시간 혜택을 알려주고, 정시 도착한 참여자에게 특별한 보상을 제공합니다. 시간도 지키고, 혜택도 받으세요!
+              </p>
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <button 
+                  onClick={() => changeView('login')}
+                  className="px-8 py-4 bg-indigo-600 text-white font-medium rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 flex items-center justify-center"
+                >
+                  시작하기
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </button>
+                <button className="px-8 py-4 border border-indigo-600 text-indigo-600 font-medium rounded-lg hover:bg-indigo-50 transition duration-300 flex items-center justify-center">
+                  데모 보기
+                </button>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="relative z-10 bg-white rounded-xl shadow-2xl overflow-hidden">
+                <img 
+                  src="https://i.ibb.co/hR08J0k/app-mockup.png" 
+                  alt="약속 상점 앱 화면" 
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-indigo-500 rounded-full opacity-30 blur-xl"></div>
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-indigo-600 rounded-full opacity-20 blur-xl"></div>
+            </div>
+          </div>
+        </div>
+        
+        {/* 둥둥 떠다니는 요소들 */}
+        <div className="hidden lg:block absolute top-20 right-40 w-16 h-16 bg-yellow-400 rounded-full opacity-20 animate-float"></div>
+        <div className="hidden lg:block absolute bottom-20 left-40 w-20 h-20 bg-green-400 rounded-full opacity-20 animate-float"></div>
+        <div className="hidden lg:block absolute bottom-40 right-80 w-10 h-10 bg-pink-400 rounded-full opacity-20 animate-float-delay"></div>
+      </section>
+      
+      {/* 기능 소개 섹션 */}
+      <section className="py-20 px-6 sm:px-10 lg:px-20">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-16">약속 상점의 주요 기능</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {/* 기능 1 */}
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+              <div className="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                <MapPin className="w-8 h-8 text-indigo-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">실시간 주변 제안</h3>
+              <p className="text-gray-600">
+                약속 장소 근처의 다양한 상점들의 실시간 혜택을 받아보세요. 약속 전후에 친구들과 함께 특별한 시간을 보낼 수 있습니다.
+              </p>
+            </div>
+            
+            {/* 기능 2 */}
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+              <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                <Clock className="w-8 h-8 text-green-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">정시 도착 보상</h3>
+              <p className="text-gray-600">
+                약속 시간에 정확히 도착하면 포인트가 적립됩니다. 적립된 포인트로 다양한 혜택을 누려보세요.
+              </p>
+            </div>
+            
+            {/* 기능 3 */}
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+              <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                <Users className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">함께하는 약속</h3>
+              <p className="text-gray-600">
+                친구들과 쉽게 약속을 만들고 관리할 수 있습니다. 모두의 위치를 실시간으로 확인하며 더 편리하게 약속을 지켜보세요.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* 앱 다운로드 섹션 */}
+      <section className="py-20 px-6 sm:px-10 lg:px-20 bg-indigo-600 text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-6">지금 바로 약속 상점 앱을 다운로드하세요</h2>
+              <p className="text-indigo-100 mb-8">
+                언제 어디서나 쉽고 빠르게 약속을 만들고 관리할 수 있습니다. 더 많은 혜택을 모바일에서 만나보세요.
+              </p>
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#" className="flex items-center bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition duration-300">
+                  <svg className="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.5,7.5a4.94,4.94,0,0,0-2.16.49A5.23,5.23,0,0,0,12,5.5,5.37,5.37,0,0,0,6.5,10.5v5a5.37,5.37,0,0,0,5.5,5,5.23,5.23,0,0,0,3.34-2.49A4.94,4.94,0,0,0,17.5,18.5a5,5,0,0,0,0-10Z" />
+                    <path d="M13,11.5v-1H8v4.95h5V14.5H9v-1h3v-1H9v-1Z" fill="#fff" />
+                  </svg>
+                  <div>
+                    <div className="text-xs">다운로드하기</div>
+                    <div className="text-xl font-medium -mt-1">App Store</div>
+                  </div>
+                </a>
+                <a href="#" className="flex items-center bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition duration-300">
+                  <svg className="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3.609 1.814L13.792 12 3.609 22.186c-.181.181-.29.435-.29.71 0 .54.435.976.976.976.275 0 .54-.109.71-.29L15.186 12 5.004 1.814c-.181-.181-.435-.29-.71-.29-.54 0-.976.435-.976.976 0 .275.109.529.29.71z" />
+                  </svg>
+                  <div>
+                    <div className="text-xs">다운로드하기</div>
+                    <div className="text-xl font-medium -mt-1">Google Play</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="flex justify-center md:justify-end">
+              <div className="relative">
+                <div className="bg-indigo-800 rounded-2xl overflow-hidden p-2 shadow-2xl">
+                  <img 
+                    src="https://i.ibb.co/kgCZW7s/mobile-app.png" 
+                    alt="약속 상점 모바일 앱" 
+                    className="w-56 h-auto"
+                  />
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-indigo-300 rounded-full opacity-50 blur-md"></div>
+                <div className="absolute -top-4 -left-4 w-24 h-24 bg-indigo-300 rounded-full opacity-50 blur-md"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* 고객 리뷰 섹션 */}
+      <section className="py-20 px-6 sm:px-10 lg:px-20">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-16">사용자들의 이야기</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* 리뷰 1 */}
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-green-600 font-bold">K</span>
+                </div>
+                <div>
+                  <h4 className="font-medium">김서연</h4>
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <p className="text-gray-600">
+                "친구들과 약속 시간을 정하는 것이 항상 어려웠는데, 약속 상점을 통해 쉽게 관리할 수 있게 되었어요. 게다가 주변 상점들의 혜택도 받을 수 있어서 일석이조입니다!"
+              </p>
+            </div>
+            
+            {/* 리뷰 2 */}
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-blue-600 font-bold">P</span>
+                </div>
+                <div>
+                  <h4 className="font-medium">박준호</h4>
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <p className="text-gray-600">
+                "늘 약속에 늦는 친구 때문에 스트레스 받았는데, 이 앱을 사용하고부터는 모두가 시간을 잘 지키게 되었어요. 포인트 적립 시스템이 정말 효과적입니다."
+              </p>
+            </div>
+            
+            {/* 리뷰 3 */}
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-purple-600 font-bold">L</span>
+                </div>
+                <div>
+                  <h4 className="font-medium">이지은</h4>
+                  <div className="flex">
+                    {[...Array(4)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                    ))}
+                    <Star className="w-4 h-4 text-gray-300" />
+                  </div>
+                </div>
+              </div>
+              <p className="text-gray-600">
+                "사업자로서 고객을 유치하는 데 큰 도움이 됩니다. 특히 약속 시간에 맞춰 방문하는 그룹 고객들이 많아져서 매출이 증가했어요. 맞춤형 프로모션을 제공할 수 있어 좋습니다."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* CTA 섹션 */}
+      <section className="py-20 px-6 sm:px-10 lg:px-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6">지금 바로 시작하세요</h2>
+          <p className="text-xl text-indigo-100 mb-8">
+            약속을 더 쉽게 관리하고, 특별한 혜택을 누려보세요.
+          </p>
+          <button 
+            onClick={() => changeView('login')}
+            className="px-8 py-4 bg-white text-indigo-600 font-bold rounded-lg shadow-lg hover:bg-gray-100 transition duration-300"
+          >
+            무료로 시작하기
+          </button>
+        </div>
+      </section>
+      
+      {/* 비즈니스 섹션 */}
+      <section className="py-20 px-6 sm:px-10 lg:px-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-block px-4 py-2 bg-indigo-100 text-indigo-600 font-medium rounded-full mb-4">
+                비즈니스를 위한
+              </div>
+              <h2 className="text-3xl font-bold mb-6">매장 홍보 효과를 극대화하세요</h2>
+              <p className="text-gray-600 mb-8">
+                약속 장소 주변 상점으로 등록하여 맞춤형 프로모션을 제공하고 새로운 고객을 유치하세요. 약속 상점은 사용자들의 약속 장소와 시간을 기반으로 최적의 홍보 효과를 제공합니다.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3">
+                    <Check className="w-4 h-4 text-green-600" />
+                  </div>
+                  <span>약속 장소 근처의 잠재 고객 타겟팅</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3">
+                    <Check className="w-4 h-4 text-green-600" />
+                  </div>
+                  <span>시간대별 맞춤형 프로모션 제공</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3">
+                    <Check className="w-4 h-4 text-green-600" />
+                  </div>
+                  <span>방문 고객 데이터 분석 및 인사이트 제공</span>
+                </li>
+              </ul>
+              <button 
+                onClick={() => {
+                  setUserType('business');
+                  changeView('login');
+                }}
+                className="mt-8 px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg shadow hover:bg-indigo-700 transition duration-300"
+              >
+                비즈니스 계정 만들기
+              </button>
+            </div>
+            <div className="relative">
+              <div className="bg-white rounded-xl shadow-xl overflow-hidden">
+                <img 
+                  src="https://i.ibb.co/DQcqY9t/business-dashboard.png" 
+                  alt="비즈니스 대시보드" 
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-indigo-500 rounded-full opacity-20 blur-xl"></div>
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-purple-500 rounded-full opacity-20 blur-xl"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* 뉴스레터 섹션 */}
+      <section className="py-20 px-6 sm:px-10 lg:px-20 bg-gray-100">
+        <div className="max-w-xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6">최신 소식을 받아보세요</h2>
+          <p className="text-gray-600 mb-8">
+            새로운 기능과 프로모션 소식을 가장 먼저 받아보세요.
+          </p>
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0">
+            <input 
+              type="email" 
+              placeholder="이메일 주소 입력" 
+              className="flex-1 px-4 py-3 rounded-lg sm:rounded-r-none border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            />
+            <button className="px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg sm:rounded-l-none hover:bg-indigo-700 transition duration-300">
+              구독하기
+            </button>
+          </div>
+        </div>
+      </section>
+      
+      {/* 푸터 링크 */}
+      <section className="pt-16 pb-8 px-6 sm:px-10 lg:px-20 bg-gray-900 text-gray-400">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div>
+              <h3 className="text-xl font-bold text-white mb-6">약속 상점</h3>
+              <p className="mb-6">시간을 지키고 혜택을 받는 스마트한 약속 플랫폼</p>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-400 hover:text-white transition duration-300">
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition duration-300">
+                  <Twitter className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition duration-300">
+                  <Instagram className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-white font-medium mb-4">서비스</h4>
+              <ul className="space-y-2">
+                <li><a href="#" className="hover:text-white transition duration-300">약속 만들기</a></li>
+                <li><a href="#" className="hover:text-white transition duration-300">주변 제안</a></li>
+                <li><a href="#" className="hover:text-white transition duration-300">포인트 적립</a></li>
+                <li><a href="#" className="hover:text-white transition duration-300">비즈니스 솔루션</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-medium mb-4">고객지원</h4>
+              <ul className="space-y-2">
+                <li><a href="#" className="hover:text-white transition duration-300">자주 묻는 질문</a></li>
+                <li><a href="#" className="hover:text-white transition duration-300">사용 가이드</a></li>
+                <li><a href="#" className="hover:text-white transition duration-300">문의하기</a></li>
+                <li><a href="#" className="hover:text-white transition duration-300">개인정보 처리방침</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-medium mb-4">연락처</h4>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <MapPin className="w-4 h-4 mr-2" />
+                  <span>서울시 강남구 테헤란로 123</span>
+                </li>
+                <li className="flex items-center">
+                  <Mail className="w-4 h-4 mr-2" />
+                  <span>contact@yaksoktalk.com</span>
+                </li>
+                <li className="flex items-center">
+                  <Smartphone className="w-4 h-4 mr-2" />
+                  <span>02-123-4567</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 pt-8 text-center text-sm">
+            <p>© 2025 약속 상점. All rights reserved.</p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
