@@ -1080,19 +1080,6 @@ const AppointmentDetailView = ({ changeView, appointment }) => {
           제안 보기
         </button>
       </div>
-      
-      {/* 하단 네비게이션 - 텍스트 변경 */}
-      <div className="fixed bottom-16 left-0 right-0 bg-white py-1 border-t flex justify-around">
-        <div className="text-center px-6 py-1">
-          <div className="text-xs font-medium">ad1</div>
-        </div>
-        <div className="text-center px-6 py-1">
-          <div className="text-xs font-medium">ad2</div>
-        </div>
-        <div className="text-center px-6 py-1">
-          <div className="text-xs font-medium">ad3</div>
-        </div>
-      </div>
     </div>
   );
 };
@@ -1553,7 +1540,7 @@ const NearbyProposalsView = ({ changeView }) => {
       
       <div className="bg-white rounded-lg shadow-md p-4 mb-4">
         <div className="flex justify-between items-center text-sm">
-          <span><strong>9개</strong>의 주변 제안</span>
+          <span><strong>10개</strong>의 주변 제안</span>
           <span>총 적립 포인트: <strong className="text-indigo-600">1,850P</strong></span>
         </div>
       </div>
@@ -1561,7 +1548,7 @@ const NearbyProposalsView = ({ changeView }) => {
       <div className="bg-white rounded-lg shadow-md overflow-hidden mb-4">
         <div className="p-4 border-b">
           <div className="flex justify-between items-center mb-2">
-            <h3 className="font-medium">가게별 주변 제안</h3>
+            <h3 className="font-medium">내가 받은 제안</h3>
             <select className="text-xs border p-1 rounded">
               <option>거리순</option>
               <option>혜택순</option>
@@ -1579,10 +1566,9 @@ const NearbyProposalsView = ({ changeView }) => {
               <div className="flex justify-between items-start">
                 <div>
                   <div className="flex items-center">
-                    <h4 className="font-medium">파스타 10% 할인</h4>
+                    <h4 className="font-medium">리워드 1000포인트</h4>
                     <span className="ml-2 text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">200P</span>
                   </div>
-                  <p className="text-xs text-gray-600">주간 회식 시간에 맞춰 방문</p>
                 </div>
                 <div className="text-right">
                   <span className="block text-xs font-medium text-indigo-600">300m</span>
@@ -1604,10 +1590,9 @@ const NearbyProposalsView = ({ changeView }) => {
               <div className="flex justify-between items-start">
                 <div>
                   <div className="flex items-center">
-                    <h4 className="font-medium">디저트 1개 무료</h4>
+                    <h4 className="font-medium">리워드 15% 포인트</h4>
                     <span className="ml-2 text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">150P</span>
                   </div>
-                  <p className="text-xs text-gray-600">4인 이상 방문 시</p>
                 </div>
                 <div className="text-right">
                   <span className="block text-xs font-medium text-indigo-600">450m</span>
@@ -1629,10 +1614,9 @@ const NearbyProposalsView = ({ changeView }) => {
               <div className="flex justify-between items-start">
                 <div>
                   <div className="flex items-center">
-                    <h4 className="font-medium">음료 1+1</h4>
+                    <h4 className="font-medium">리워드 20% 포인트</h4>
                     <span className="ml-2 text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">100P</span>
                   </div>
-                  <p className="text-xs text-gray-600">주말 오후 2시-5시</p>
                 </div>
                 <div className="text-right">
                   <span className="block text-xs font-medium text-indigo-600">600m</span>
@@ -1654,10 +1638,9 @@ const NearbyProposalsView = ({ changeView }) => {
               <div className="flex justify-between items-start">
                 <div>
                   <div className="flex items-center">
-                    <h4 className="font-medium">서비스 메뉴 제공</h4>
+                    <h4 className="font-medium">리워드 25% 포인트</h4>
                     <span className="ml-2 text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">180P</span>
                   </div>
-                  <p className="text-xs text-gray-600">저녁 식사 예약 시</p>
                 </div>
                 <div className="text-right">
                   <span className="block text-xs font-medium text-indigo-600">700m</span>
@@ -1665,7 +1648,7 @@ const NearbyProposalsView = ({ changeView }) => {
                 </div>
               </div>
               <div className="flex justify-between mt-2">
-                <span className="text-xs text-gray-600">한옥집</span>
+                <span className="text-xs text-gray-600">맛있는 밥상</span>
                 <button className="text-xs text-indigo-600">자세히 보기</button>
               </div>
             </div>
@@ -1679,19 +1662,18 @@ const NearbyProposalsView = ({ changeView }) => {
               <div className="flex justify-between items-start">
                 <div>
                   <div className="flex items-center">
-                    <h4 className="font-medium"><s>테이블 셋팅비 면제</s></h4>
-                    <span className="ml-2 text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">소진됨</span>
+                    <h4 className="font-medium">리워드 30% 포인트</h4>
+                    <span className="ml-2 text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">220P</span>
                   </div>
-                  <p className="text-xs text-gray-600">저녁 7시 이후 방문</p>
                 </div>
                 <div className="text-right">
-                  <span className="block text-xs font-medium text-indigo-600">1.1km</span>
-                  <span className="block text-xs text-gray-600">바/술집</span>
+                  <span className="block text-xs font-medium text-indigo-600">850m</span>
+                  <span className="block text-xs text-gray-600">패션</span>
                 </div>
               </div>
               <div className="flex justify-between mt-2">
-                <span className="text-xs text-gray-600">루프탑 바</span>
-                <button className="text-xs text-gray-400">품절</button>
+                <span className="text-xs text-gray-600">트렌디 스토어</span>
+                <button className="text-xs text-indigo-600">자세히 보기</button>
               </div>
             </div>
           </div>
@@ -1704,19 +1686,18 @@ const NearbyProposalsView = ({ changeView }) => {
               <div className="flex justify-between items-start">
                 <div>
                   <div className="flex items-center">
-                    <h4 className="font-medium"><s>아이스크림 무료 제공</s></h4>
-                    <span className="ml-2 text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">소진됨</span>
+                    <h4 className="font-medium">리워드 10% 포인트</h4>
+                    <span className="ml-2 text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">120P</span>
                   </div>
-                  <p className="text-xs text-gray-600">가족 단위 방문객</p>
                 </div>
                 <div className="text-right">
-                  <span className="block text-xs font-medium text-indigo-600">1.5km</span>
-                  <span className="block text-xs text-gray-600">패밀리 레스토랑</span>
+                  <span className="block text-xs font-medium text-indigo-600">920m</span>
+                  <span className="block text-xs text-gray-600">뷰티</span>
                 </div>
               </div>
               <div className="flex justify-between mt-2">
-                <span className="text-xs text-gray-600">패밀리 키친</span>
-                <button className="text-xs text-gray-400">품절</button>
+                <span className="text-xs text-gray-600">글로우 뷰티</span>
+                <button className="text-xs text-indigo-600">자세히 보기</button>
               </div>
             </div>
           </div>
@@ -1729,18 +1710,89 @@ const NearbyProposalsView = ({ changeView }) => {
               <div className="flex justify-between items-start">
                 <div>
                   <div className="flex items-center">
-                    <h4 className="font-medium">와인 20% 할인</h4>
-                    <span className="ml-2 text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">200P</span>
+                    <h4 className="font-medium">리워드 15% 포인트</h4>
+                    <span className="ml-2 text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">130P</span>
                   </div>
-                  <p className="text-xs text-gray-600">디너 코스 주문 시</p>
                 </div>
                 <div className="text-right">
-                  <span className="block text-xs font-medium text-indigo-600">2km</span>
-                  <span className="block text-xs text-gray-600">프렌치</span>
+                  <span className="block text-xs font-medium text-indigo-600">1.1km</span>
+                  <span className="block text-xs text-gray-600">스포츠</span>
                 </div>
               </div>
               <div className="flex justify-between mt-2">
-                <span className="text-xs text-gray-600">르 프랑세</span>
+                <span className="text-xs text-gray-600">스포츠 월드</span>
+                <button className="text-xs text-indigo-600">자세히 보기</button>
+              </div>
+            </div>
+          </div>
+          
+          <div className="p-4 flex items-center">
+            <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+              <span className="text-indigo-800 font-medium">8</span>
+            </div>
+            <div className="flex-1">
+              <div className="flex justify-between items-start">
+                <div>
+                  <div className="flex items-center">
+                    <h4 className="font-medium">리워드 800포인트</h4>
+                    <span className="ml-2 text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">180P</span>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <span className="block text-xs font-medium text-indigo-600">1.3km</span>
+                  <span className="block text-xs text-gray-600">전자기기</span>
+                </div>
+              </div>
+              <div className="flex justify-between mt-2">
+                <span className="text-xs text-gray-600">테크 월드</span>
+                <button className="text-xs text-indigo-600">자세히 보기</button>
+              </div>
+            </div>
+          </div>
+          
+          <div className="p-4 flex items-center">
+            <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+              <span className="text-indigo-800 font-medium">9</span>
+            </div>
+            <div className="flex-1">
+              <div className="flex justify-between items-start">
+                <div>
+                  <div className="flex items-center">
+                    <h4 className="font-medium">리워드 25% 포인트</h4>
+                    <span className="ml-2 text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">200P</span>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <span className="block text-xs font-medium text-indigo-600">1.5km</span>
+                  <span className="block text-xs text-gray-600">서점</span>
+                </div>
+              </div>
+              <div className="flex justify-between mt-2">
+                <span className="text-xs text-gray-600">북스토리</span>
+                <button className="text-xs text-indigo-600">자세히 보기</button>
+              </div>
+            </div>
+          </div>
+          
+          <div className="p-4 flex items-center">
+            <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+              <span className="text-indigo-800 font-medium">10</span>
+            </div>
+            <div className="flex-1">
+              <div className="flex justify-between items-start">
+                <div>
+                  <div className="flex items-center">
+                    <h4 className="font-medium">리워드 20% 포인트</h4>
+                    <span className="ml-2 text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">170P</span>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <span className="block text-xs font-medium text-indigo-600">1.8km</span>
+                  <span className="block text-xs text-gray-600">홈데코</span>
+                </div>
+              </div>
+              <div className="flex justify-between mt-2">
+                <span className="text-xs text-gray-600">홈스타일</span>
                 <button className="text-xs text-indigo-600">자세히 보기</button>
               </div>
             </div>
