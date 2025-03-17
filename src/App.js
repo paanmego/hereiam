@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Calendar, Users, Car, UserPlus, Star, CreditCard, Settings, ChevronRight, LogIn, UserCircle, Map, Clock, DollarSign, BarChart, ArrowRight, Smartphone, Check, Mail, Lock, Eye, Facebook, Twitter, Instagram, GitHub, ArrowLeft, TrendingUp, TrendingDown, LineChart, Briefcase, GraduationCap, Home, Store, MoreHorizontal, MousePointer, ShoppingCart } from 'lucide-react';
+import { MapPin, Calendar, Users, Car, UserPlus, Star, CreditCard, Settings, ChevronRight, LogIn, UserCircle, Map, Clock, DollarSign, BarChart, ArrowRight, Smartphone, Check, Mail, Lock, Eye, Facebook, Twitter, Instagram, GitHub, ArrowLeft, TrendingUp, TrendingDown, LineChart, Briefcase, GraduationCap, Home, Store, MoreHorizontal, MousePointer, ShoppingCart, Link } from 'lucide-react';
 import './index.css';
  
 // 앱 메인 컴포넌트
@@ -732,7 +732,8 @@ const UserDashboardView = ({ changeView, onAppointmentSelect }) => {
                 <div className="flex justify-between mb-2">
                   <div className="flex items-center">
                     <h5 className="font-medium">{appointment.title}</h5>
-                    <span className="ml-2 text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">Owner: {appointment.owner}</span>
+                    <Link className="w-4 h-4 mx-1 text-indigo-600" title="인증" />
+                    <span className="ml-1 text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">Owner: {appointment.owner}</span>
                   </div>
                   <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">{appointment.date}</span>
                 </div>
@@ -1237,7 +1238,8 @@ const AppointmentListView = ({ changeView }) => {
             <div className="flex justify-between mb-2">
               <div className="flex items-center">
                 <h3 className="font-medium">{appointment.title}</h3>
-                <span className="ml-2 text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">
+                <Link className="w-4 h-4 mx-1 text-indigo-600" title="인증" />
+                <span className="ml-1 text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">
                   Owner: {appointment.owner}
                 </span>
               </div>
