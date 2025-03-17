@@ -797,6 +797,8 @@ const AppointmentDetailView = ({ changeView, appointment }) => {
   
   // 지각자 벌칙 정보 (주간회식인 경우만)
   const latePenalty = appointment && appointment.title === "주간 회식" ? "2차 쏘기" : "커피 돌리기";
+  // 포인트 몰아주기 정보
+  const pointBonus = "포인트 몰아주기";
 
   // 약속이 없는 경우 대시보드로 리다이렉트
   if (!appointment) {
@@ -835,7 +837,7 @@ const AppointmentDetailView = ({ changeView, appointment }) => {
           <div 
             className="w-full h-full bg-cover bg-center animate-pulse-slow"
             style={{
-              backgroundImage: "url('https://i.ibb.co/7QMBr3D/gangnam-map.jpg')",
+              backgroundImage: "url('https://maps.googleapis.com/maps/api/staticmap?center=37.504,127.049&zoom=15&size=600x300&markers=color:red%7C37.504,127.049&key=YOUR_API_KEY')",
               backgroundSize: "cover",
               backgroundPosition: "center"
             }}
@@ -959,33 +961,33 @@ const AppointmentDetailView = ({ changeView, appointment }) => {
             </span>
           </div>
           
-          {/* 지각자 벌칙 정보 추가 */}
-          <div className="mt-3 mb-2">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <AlertTriangle className="w-4 h-4 text-yellow-500 mr-1" />
-                <span className="text-xs font-bold text-gray-700">지각자 벌칙:</span>
-              </div>
-              
-              <div className="relative group">
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
-                  <span className="text-white text-xs font-bold">!</span>
-                </div>
-                <div className="transform transition-transform duration-300 hover:scale-105 group-hover:rotate-3">
-                  <div className="bg-gradient-to-r from-red-500 via-purple-500 to-pink-500 text-white text-xs font-bold py-1.5 px-3 rounded-full shadow-md flex items-center">
-                    <Wine className="w-4 h-4 mr-1 animate-bounce" />
-                    <span className="mr-1">{latePenalty}</span>
-                    <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-yellow-400 opacity-75"></span>
-                  </div>
+          {/* 약속 정보 태그들을 가로로 배열 */}
+          <div className="flex flex-wrap items-center gap-2 mt-2">
+            {/* Owner 정보 */}
+            <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded-full flex items-center">
+              <UserCircle className="w-3 h-3 mr-1" />
+              Owner: {appointment.owner}
+            </span>
+            
+            {/* 지각자 벌칙 */}
+            <div className="relative">
+              <div className="transform transition-transform duration-300 hover:scale-105">
+                <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold py-0.5 px-2 rounded-full shadow-sm flex items-center">
+                  <AlertTriangle className="w-3 h-3 mr-1" />
+                  <span>지각자 벌칙: {latePenalty}</span>
                 </div>
               </div>
             </div>
-          </div>
-          
-          <div className="flex items-center mt-2">
-            <span className="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded">
-              Owner: {appointment.owner}
-            </span>
+            
+            {/* 포인트 몰아주기 */}
+            <div className="relative">
+              <div className="transform transition-transform duration-300 hover:scale-105">
+                <div className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-xs font-bold py-0.5 px-2 rounded-full shadow-sm flex items-center">
+                  <Star className="w-3 h-3 mr-1 text-yellow-300" />
+                  <span>{pointBonus}</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
